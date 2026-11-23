@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>毎日口にするもの、自分で選ぼう｜今日からできる身体の見直しガイド</title>
+<style>
+  :root {
+    --pink: #e07a93;
+    --pink-dark: #c85a76;
+    --pink-light: #fbe9ee;
+    --beige: #fbf6f1;
+    --brown: #5a4636;
+    --brown-light: #8a7462;
+    --line: #ecd9cf;
+    --green: #7aa57a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--beige);
+    color: var(--brown);
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.9;
+    font-size: 16px;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 16px 12px 40px; }
+
+  /* 1枚＝1ページ */
+  .sheet {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(90, 70, 54, 0.10);
+    padding: 36px 26px 30px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .pageno {
+    position: absolute; top: 14px; right: 18px;
+    font-size: 12px; color: #c3b0a2; letter-spacing: .08em;
+  }
+  .kicker {
+    color: var(--pink);
+    font-size: 14px;
+    text-align: center;
+    margin: 0 0 4px;
+    letter-spacing: .05em;
+  }
+  h2 {
+    font-size: 23px;
+    line-height: 1.55;
+    text-align: center;
+    margin: 0 0 18px;
+    color: var(--brown);
+  }
+  h2 .em { color: var(--pink); }
+  h3 {
+    font-size: 17px;
+    margin: 26px 0 10px;
+    padding: 4px 0 4px 12px;
+    border-left: 5px solid var(--pink);
+    line-height: 1.6;
+  }
+  p { margin: 0 0 14px; }
+  .lead { text-align: center; }
+  .small { font-size: 13px; color: var(--brown-light); }
+  .center { text-align: center; }
+  .divider {
+    width: 60px; height: 2px; background: var(--pink);
+    margin: 16px auto 22px; border-radius: 2px; opacity: .6;
+  }
+  .box {
+    background: var(--pink-light);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  .box.beige { background: var(--beige); }
+  .box p:last-child { margin-bottom: 0; }
+
+  /* 表紙 */
+  .cover { text-align: center; padding-top: 56px; padding-bottom: 46px; }
+  .cover .gift {
+    display: inline-block;
+    font-size: 13px;
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    border-radius: 999px;
+    padding: 2px 16px;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-size: 27px;
+    line-height: 1.6;
+    margin: 0 0 6px;
+  }
+  .cover h1 small {
+    display: block;
+    font-size: 19px;
+    color: var(--pink);
+    margin-bottom: 6px;
+  }
+  .cover .sub { font-size: 14px; color: var(--brown-light); margin-bottom: 30px; }
+  .cover .message { text-align: left; max-width: 460px; margin: 0 auto 26px; }
+  .author {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin-top: 10px;
+  }
+  .author img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+  .author .name { text-align: left; line-height: 1.5; }
+  .author .name b { font-size: 17px; }
+  .author .name span { font-size: 12px; color: var(--brown-light); }
+
+  /* チェックリスト */
+  .checklist { list-style: none; padding: 0; margin: 0 0 6px; }
+  .checklist li { border-bottom: 1px dashed var(--line); }
+  .checklist label {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 2px; cursor: pointer;
+  }
+  .checklist input {
+    flex: none;
+    appearance: none; -webkit-appearance: none;
+    width: 22px; height: 22px; margin: 4px 0 0;
+    border: 2px solid var(--pink); border-radius: 6px; background: #fff;
+    position: relative; cursor: pointer;
+  }
+  .checklist input:checked { background: var(--pink); }
+  .checklist input:checked::after {
+    content: ""; position: absolute; left: 6px; top: 1px;
+    width: 6px; height: 12px;
+    border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg);
+  }
+  .checklist .note { display: block; font-size: 12px; color: var(--brown-light); }
+  .count {
+    text-align: center; font-size: 15px; margin: 18px 0 0;
+  }
+  .count b { color: var(--pink); font-size: 22px; }
+
+  /* 理由 */
+  .reasons { display: grid; gap: 12px; margin: 18px 0; }
+  .reason {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px 12px;
+  }
+  .reason .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--pink); color: #fff; font-size: 14px; font-weight: bold;
+    margin-right: 8px;
+  }
+  .reason b { font-size: 17px; }
+  .reason p { margin: 6px 0 0; font-size: 15px; }
+
+  /* 3つの要点・食事例 */
+  .points { display: grid; gap: 10px; margin: 14px 0; }
+  .point {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--beige); border-radius: 10px; padding: 12px 14px;
+  }
+  .point .num {
+    flex: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--pink); color: #fff; font-size: 13px; font-weight: bold; margin-top: 2px;
+  }
+  .point b { display: block; }
+  .point span { font-size: 14px; }
+  .meals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; }
+  .meal {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 8px; text-align: center; font-size: 14px; line-height: 1.6;
+  }
+  .meal .when { display: block; color: var(--pink); font-weight: bold; margin-bottom: 4px; }
+  .avoid { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .avoid span {
+    border: 1px solid var(--pink); color: var(--pink-dark);
+    border-radius: 999px; padding: 2px 14px; font-size: 14px;
+  }
+
+  /* タイムライン */
+  .timeline { margin: 16px 0; border-left: 3px solid var(--pink-light); padding-left: 16px; }
+  .tl { position: relative; padding-bottom: 16px; }
+  .tl::before {
+    content: ""; position: absolute; left: -24px; top: 8px;
+    width: 13px; height: 13px; border-radius: 50%; background: var(--pink);
+  }
+  .tl .time { font-size: 13px; color: var(--pink-dark); font-weight: bold; }
+  .tl b { display: block; font-size: 16px; }
+  .tl ul { margin: 4px 0 0; padding-left: 1.2em; font-size: 15px; }
+  .tl .tip { display: block; font-size: 13px; color: var(--brown-light); margin-top: 4px; }
+
+  /* 注意点 */
+  .cautions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .caution { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.7; }
+  .caution b { display: block; color: var(--pink-dark); font-size: 15px; margin-bottom: 2px; }
+
+  /* 記録表 */
+  .record { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .record th, .record td { border: 1px solid var(--line); padding: 8px 6px; text-align: center; }
+  .record th { background: var(--pink-light); font-weight: bold; }
+  .record td:first-child { text-align: left; background: var(--beige); }
+  .record input {
+    width: 100%; border: none; border-bottom: 1px solid var(--line);
+    font: inherit; text-align: center; background: transparent; color: var(--brown); padding: 4px 0;
+  }
+  .record input:focus { outline: none; border-bottom-color: var(--pink); }
+  .scale { font-size: 12px; color: var(--brown-light); text-align: center; margin: -4px 0 12px; }
+  textarea {
+    width: 100%; min-height: 110px; border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; font: inherit; color: var(--brown); resize: vertical;
+    background: repeating-linear-gradient(#fff, #fff 31px, var(--line) 32px);
+    line-height: 32px;
+  }
+  .saved { font-size: 12px; color: var(--brown-light); text-align: center; margin-top: 6px; }
+
+  /* 次の一歩 */
+  .worry { text-align: center; font-size: 16px; line-height: 2; margin: 6px 0 18px; }
+  .worry q { display: block; quotes: "「" "」"; color: var(--pink-dark); }
+  .program {
+    border: 2px solid var(--pink); border-radius: 14px; padding: 20px 18px; margin: 20px 0;
+  }
+  .program .title { text-align: center; margin-bottom: 4px; }
+  .program .title b { display: block; font-size: 21px; }
+  .program .title span { color: var(--pink); font-size: 14px; }
+  .days { display: grid; gap: 8px; margin: 16px 0; }
+  .day { display: flex; gap: 12px; align-items: flex-start; background: var(--beige); border-radius: 10px; padding: 10px 12px; }
+  .day .date { flex: none; width: 128px; font-size: 13px; line-height: 1.5; color: var(--brown-light); }
+  .day .date b { display: block; font-size: 15px; color: var(--pink-dark); }
+  .day.main { background: var(--pink-light); }
+  .day p { margin: 0; font-size: 14px; }
+  .price { text-align: center; margin: 16px 0 6px; }
+  .price s { color: var(--brown-light); }
+  .price .special { display: block; font-size: 15px; }
+  .price .special b { font-size: 26px; color: var(--pink-dark); }
+  .btn {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--pink); color: #fff; font-weight: bold;
+    border-radius: 999px; padding: 14px 20px; margin: 14px auto 4px; max-width: 360px;
+  }
+  .btn.line { background: #06c755; }
+  .btn.pending { background: #d9c8bd; pointer-events: none; }
+  .words { text-align: center; line-height: 2.1; margin: 26px 0 10px; }
+  .words p { margin: 0; }
+
+
+  /* イラスト */
+  .ic { display: inline-block; width: 1.5em; height: 1.5em; vertical-align: -0.38em; margin-right: 6px; }
+  .ic-lg { display: block; width: 72px; height: 72px; margin: 0 auto 6px; }
+  .ic-md { display: block; width: 44px; height: 44px; margin: 0 auto 4px; }
+  .corner { position: absolute; top: 10px; left: 14px; width: 46px; height: 46px; opacity: .9; }
+  .sprig { display: block; width: 130px; height: 65px; margin: 0 auto; }
+  .sprig.flip { transform: scaleX(-1); }
+  .reason { position: relative; padding-right: 64px; }
+  .reason .pic { position: absolute; right: 12px; top: 14px; width: 42px; height: 42px; }
+  .tl { padding-right: 52px; }
+  .tl .pic { position: absolute; right: 0; top: 4px; width: 40px; height: 40px; }
+  .point .pic { flex: none; width: 38px; height: 38px; margin-left: auto; }
+  .point > div { flex: 1; }
+
+  /* 図解：3日の流れ */
+  .flow { display: flex; align-items: stretch; justify-content: center; gap: 6px; margin: 18px 0 6px; }
+  .flow .step { flex: 1; text-align: center; border-radius: 12px; padding: 12px 6px 10px; background: var(--beige); font-size: 13px; line-height: 1.6; }
+  .flow .step b { display: block; font-size: 15px; color: var(--pink-dark); }
+  .flow .step.main { background: var(--pink-light); }
+  .flow .arrow { align-self: center; color: var(--pink); font-size: 20px; flex: none; }
+
+  /* 図解：足す・休ませる */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0 6px; }
+  .compare div { border-radius: 12px; padding: 12px 10px; text-align: center; font-size: 14px; line-height: 1.6; }
+  .compare .add { background: var(--beige); }
+  .compare .rest { background: var(--pink-light); border: 2px solid var(--pink); }
+  .compare b { display: block; font-size: 15px; }
+  .keyword { display: inline-block; background: #fff; border: 2px solid #06c755; color: #06a046; border-radius: 8px; padding: 0 12px; font-weight: bold; margin: 0 2px; }
+
+  .diag { display: grid; gap: 8px; margin: 10px 0; }
+  .tier { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.7; transition: all .2s; }
+  .tier .tag { flex: none; width: 72px; text-align: center; background: var(--beige); border-radius: 8px; padding: 4px 0; font-weight: bold; color: var(--pink-dark); font-size: 13px; }
+  .tier b { display: block; font-size: 16px; margin-bottom: 2px; }
+  .tier.active { border: 2px solid var(--pink); background: var(--pink-light); }
+  .tier.active .tag { background: var(--pink); color: #fff; }
+  .tier.active b::after { content: "　← あなたはここ"; color: var(--pink); font-size: 13px; }
+  .note-box { border: 1px dashed var(--pink); border-radius: 12px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
+  .note-box b { color: var(--pink-dark); }
+  .tools { max-width: 680px; margin: 0 auto; padding: 0 12px 30px; text-align: center; }
+  .tools button {
+    font: inherit; border: 1px solid var(--pink); color: var(--pink-dark); background: #fff;
+    border-radius: 999px; padding: 10px 24px; cursor: pointer;
+  }
+  footer { text-align: center; font-size: 12px; padding: 0 20px 40px; color: var(--brown-light); }
+
+  @media (max-width: 420px) {
+    .sheet { padding: 32px 18px 24px; }
+    h2 { font-size: 21px; }
+    .cover h1 { font-size: 23px; }
+    .meals { grid-template-columns: 1fr; }
+    .cautions { grid-template-columns: 1fr; }
+  }
+
+  /* 印刷：A4で1枚＝1ページ */
+  @page { size: A4; margin: 12mm; }
+  @media print {
+    body { background: #fff; font-size: 12.5px; line-height: 1.75; }
+    main { max-width: none; padding: 0; }
+    .sheet {
+      box-shadow: none; border-radius: 0; margin: 0; padding: 6mm 4mm 0;
+      break-after: page; page-break-after: always;
+    }
+    .sheet:last-of-type { break-after: auto; page-break-after: auto; }
+    .tools, footer, .saved, .count, .screen-only { display: none; }
+    .corner { width: 36px; height: 36px; }
+    .program .btn.line { display: none; }
+    .compare { margin: 8px 0 2px; }
+    .compare div { padding: 6px 8px; font-size: 12px; line-height: 1.5; }
+    .reason { padding: 6px 56px 6px 12px; }
+    .reason p { font-size: 12.5px; margin-top: 2px; }
+    .reason .pic { width: 34px; height: 34px; top: 10px; }
+    .flow { margin: 8px 0 4px; }
+    .flow .step { padding: 6px 4px; font-size: 12px; line-height: 1.5; }
+    .flow .step .ic-md { width: 30px; height: 30px; }
+    .sheet > p { margin-bottom: 8px; }
+    .checklist label { padding: 2px 2px !important; }
+    .checklist input { width: 18px; height: 18px; margin-top: 3px; }
+    .diag { gap: 5px; margin: 6px 0; }
+    .tier { padding: 5px 10px; font-size: 11.5px; line-height: 1.55; }
+    .tier b { font-size: 13px; margin: 0; }
+    .tier .tag { width: 62px; font-size: 11.5px; }
+    .note-box { padding: 6px 12px; margin: 8px 0; font-size: 12px; }
+    .meal { padding: 6px; }
+    .box { padding: 8px 14px; margin: 10px 0; }
+    .btn.pending { display: none; }
+    h2 { font-size: 19px; margin-bottom: 12px; }
+    h3 { margin: 14px 0 6px; }
+    .cover { padding-top: 30mm; }
+    .checklist label { padding: 5px 2px; }
+    .reasons { gap: 8px; margin: 10px 0; }
+    .reason { padding: 8px 12px; }
+    .tl { padding-bottom: 8px; }
+    textarea { min-height: 42mm; }
+    .btn.line { display: none; }
+    .record { margin: 8px 0; }
+    .record td, .record th { padding: 6px 6px !important; }
+    .worry { line-height: 1.8; margin: 0 0 8px; }
+    .program { padding: 10px 14px; margin: 10px 0; }
+    .days { gap: 5px; margin: 8px 0; }
+    .day { padding: 6px 10px; }
+    .price { margin: 8px 0 0; }
+    .words { line-height: 1.8; margin: 12px 0 6px; }
+    .author img { width: 48px; height: 48px; }
+    .sheet h3 { margin-top: 12px; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-water" viewBox="0 0 64 64">
+      <path d="M17 10h30l-4 44H21z" fill="#eef6fa" stroke="#8a7462" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M19.4 30h25.2l-2.1 22.5H21.5z" fill="#a9d3ea"/>
+      <path d="M32 36c-3 4-4.5 6-4.5 8a4.5 4.5 0 0 0 9 0c0-2-1.5-4-4.5-8z" fill="#fff"/>
+    </symbol>
+    <symbol id="ic-soup" viewBox="0 0 64 64">
+      <path d="M24 16c-2-3 2-5 0-8M32 16c-2-3 2-5 0-8M40 16c-2-3 2-5 0-8" fill="none" stroke="#c3b0a2" stroke-width="2" stroke-linecap="round"/>
+      <path d="M8 28h48a24 22 0 0 1-48 0z" fill="#b8644a"/>
+      <ellipse cx="32" cy="28" rx="24" ry="5" fill="#e8b96a"/>
+      <rect x="22" y="25" width="6" height="5" rx="1" fill="#fff"/><rect x="34" y="24" width="6" height="5" rx="1" fill="#fff"/>
+      <path d="M28 31c3-2 6-2 9 0" stroke="#7aa57a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <rect x="22" y="48" width="20" height="5" rx="2" fill="#8f4c38"/>
+    </symbol>
+    <symbol id="ic-rice" viewBox="0 0 64 64">
+      <path d="M14 30c0-10 8-16 18-16s18 6 18 16z" fill="#fff" stroke="#d8cabd" stroke-width="2"/>
+      <path d="M8 30h48a24 22 0 0 1-48 0z" fill="#f0c9d2"/>
+      <path d="M16 38h32" stroke="#e07a93" stroke-width="2" stroke-dasharray="3 4" stroke-linecap="round"/>
+      <rect x="22" y="50" width="20" height="5" rx="2" fill="#e3a9b7"/>
+    </symbol>
+    <symbol id="ic-clock" viewBox="0 0 64 64">
+      <circle cx="32" cy="34" r="22" fill="#fff" stroke="#e07a93" stroke-width="3"/>
+      <path d="M32 20v14l9 6" fill="none" stroke="#5a4636" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="34" r="2.5" fill="#5a4636"/>
+      <path d="M14 14l6 5M50 14l-6 5" stroke="#e8b96a" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-tofu" viewBox="0 0 64 64">
+      <path d="M10 26l22-10 22 10-22 10z" fill="#fff" stroke="#c3b0a2" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M10 26v18l22 10V36z" fill="#f6efe6" stroke="#c3b0a2" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M54 26v18L32 54V36z" fill="#efe5d8" stroke="#c3b0a2" stroke-width="2" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-sunrise" viewBox="0 0 64 64">
+      <path d="M14 44a18 18 0 0 1 36 0z" fill="#f6c46b"/>
+      <path d="M32 14v8M14 22l5 5M50 22l-5 5M6 36h6M52 36h6" stroke="#f6c46b" stroke-width="3" stroke-linecap="round"/>
+      <path d="M6 46h52" stroke="#e8b96a" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-sun" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="12" fill="#f6c46b"/>
+      <path d="M32 8v8M32 48v8M8 32h8M48 32h8M15 15l6 6M43 43l6 6M49 15l-6 6M21 43l-6 6" stroke="#f6c46b" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-moon" viewBox="0 0 64 64">
+      <path d="M40 10a22 22 0 1 0 14 34A18 18 0 0 1 40 10z" fill="#b9a6d6"/>
+      <circle cx="18" cy="16" r="2" fill="#e8b96a"/><circle cx="50" cy="14" r="1.6" fill="#e8b96a"/><circle cx="12" cy="40" r="1.4" fill="#e8b96a"/>
+    </symbol>
+    <symbol id="ic-newmoon" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="20" fill="#4a4060"/>
+      <circle cx="32" cy="32" r="20" fill="none" stroke="#e8b96a" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+      <circle cx="10" cy="12" r="2" fill="#e8b96a"/><circle cx="54" cy="16" r="1.6" fill="#e8b96a"/><circle cx="52" cy="52" r="2" fill="#e8b96a"/>
+    </symbol>
+    <symbol id="ic-tea" viewBox="0 0 64 64">
+      <path d="M26 14c-2-3 2-5 0-8M36 14c-2-3 2-5 0-8" fill="none" stroke="#c3b0a2" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 20h36v14a18 18 0 0 1-36 0z" fill="#fff" stroke="#e07a93" stroke-width="2.5"/>
+      <path d="M14 24h32v10a16 16 0 0 1-32 0z" fill="#f2d28e"/>
+      <path d="M48 24h4a6 6 0 0 1 0 12h-5" fill="none" stroke="#e07a93" stroke-width="2.5"/>
+      <path d="M8 56h44" stroke="#e3a9b7" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-leaf" viewBox="0 0 64 64">
+      <path d="M14 52C14 28 28 12 54 10c0 26-16 42-40 42z" fill="#a8cba0"/>
+      <path d="M14 52C24 40 34 30 46 20" fill="none" stroke="#6f9a68" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-rest" viewBox="0 0 64 64">
+      <rect x="8" y="36" width="48" height="14" rx="7" fill="#f0c9d2"/>
+      <ellipse cx="22" cy="36" rx="10" ry="6" fill="#fff" stroke="#e3a9b7" stroke-width="2"/>
+      <text x="36" y="26" font-size="12" font-weight="bold" fill="#b9a6d6" font-family="sans-serif">z</text>
+      <text x="44" y="18" font-size="15" font-weight="bold" fill="#b9a6d6" font-family="sans-serif">z</text>
+    </symbol>
+    <symbol id="ic-heart" viewBox="0 0 64 64">
+      <path d="M32 54S8 40 8 24a12 12 0 0 1 24-4 12 12 0 0 1 24 4c0 16-24 30-24 30z" fill="#e07a93"/>
+      <path d="M18 22a6 6 0 0 1 6-5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-note" viewBox="0 0 64 64">
+      <rect x="12" y="8" width="34" height="46" rx="4" fill="#fff" stroke="#c3b0a2" stroke-width="2"/>
+      <path d="M19 20h20M19 28h20M19 36h14" stroke="#e3a9b7" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M44 50l10-26 4 2-10 26-5 2z" fill="#f6c46b" stroke="#8a7462" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-chat" viewBox="0 0 64 64">
+      <path d="M10 14h44a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 9v-9h-8a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" fill="#8fd19e"/>
+      <circle cx="22" cy="30" r="3" fill="#fff"/><circle cx="32" cy="30" r="3" fill="#fff"/><circle cx="42" cy="30" r="3" fill="#fff"/>
+    </symbol>
+    <symbol id="ic-people" viewBox="0 0 64 64">
+      <circle cx="18" cy="24" r="7" fill="#f0c9d2"/><path d="M6 50a12 12 0 0 1 24 0z" fill="#f0c9d2"/>
+      <circle cx="46" cy="24" r="7" fill="#a8cba0"/><path d="M34 50a12 12 0 0 1 24 0z" fill="#a8cba0"/>
+      <circle cx="32" cy="20" r="8" fill="#e07a93"/><path d="M18 52a14 14 0 0 1 28 0z" fill="#e07a93"/>
+    </symbol>
+    <symbol id="ic-sprig" viewBox="0 0 120 60">
+      <path d="M4 52C30 40 60 30 116 10" fill="none" stroke="#c9a99a" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="30" cy="38" rx="9" ry="4.5" transform="rotate(-40 30 38)" fill="#f0c9d2"/>
+      <ellipse cx="38" cy="48" rx="9" ry="4.5" transform="rotate(20 38 48)" fill="#e3a9b7"/>
+      <ellipse cx="60" cy="26" rx="9" ry="4.5" transform="rotate(-40 60 26)" fill="#f0c9d2"/>
+      <ellipse cx="68" cy="36" rx="9" ry="4.5" transform="rotate(20 68 36)" fill="#e3a9b7"/>
+      <ellipse cx="90" cy="15" rx="9" ry="4.5" transform="rotate(-40 90 15)" fill="#f0c9d2"/>
+      <ellipse cx="98" cy="25" rx="9" ry="4.5" transform="rotate(20 98 25)" fill="#e3a9b7"/>
+    </symbol>
+  </defs>
+</svg>
+<main>
+
+<!-- 1ページ目：表紙 -->
+<section class="sheet cover">
+  <svg class="sprig"><use href="#ic-sprig"/></svg>
+  <h1><small>毎日口にするもの、自分で選ぼう</small>今日からできる<br>身体の見直しガイド</h1>
+  <p class="sub">チェックリスト＋はじめての1日ファスティング</p>
+  <div class="cover-pics" style="display:flex;justify-content:center;gap:18px;margin:4px 0 8px">
+    <svg style="width:54px;height:54px"><use href="#ic-water"/></svg>
+    <svg style="width:54px;height:54px"><use href="#ic-soup"/></svg>
+    <svg style="width:54px;height:54px"><use href="#ic-leaf"/></svg>
+  </div>
+  <div class="message">
+    <p>このガイドを受け取ってくださって、ありがとうございます。</p>
+    <p>毎日口にする水や食べ物。<br>いつも当たり前にあるものだからこそ、ふだんはあまり考えることがありません。</p>
+    <p>でも、何を口にするかは、自分で選ぶことができます。<br>身体は、食べたものでつくられるからです。</p>
+    <p>このガイドは、「選ぶ力」を毎日の暮らしの中で少しずつ育てるためのものです。<br>できるところから、ひとつずつ試してみてくださいね。</p>
+  </div>
+  <div class="author">
+    <img src="profile.jpg" alt="やすむらひろみ">
+    <div class="name"><b>やすむらひろみ</b><br><span>体質改善コーチ・ファスティング講師</span></div>
+  </div>
+</section>
+
+<!-- 2ページ目：チェックリスト -->
+<section class="sheet" id="check">
+  <span class="pageno">2 / 8</span>
+  <svg class="corner"><use href="#ic-leaf"/></svg>
+  <p class="kicker">まずは知ることから</p>
+  <h2>毎日の「口にするもの」<br><span class="em">見直しチェックリスト</span></h2>
+  <p class="lead">できている項目に☑をつけてください。<br>☑がつかなかったところが、あなたの「伸びしろ」です。</p>
+
+  <h3><svg class="ic"><use href="#ic-water"/></svg>水</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">自分が住んでいる地域の水が、どこから来ているか知っている</label></li>
+    <li><label><input type="checkbox">自治体が出している水質の情報を見たことがある</label></li>
+    <li><label><input type="checkbox">飲む水を、自分なりに選んでいる<span class="note">（浄水器・ミネラルウォーターなど）</span></label></li>
+    <li><label><input type="checkbox">1日に1.5Lくらい、水や白湯を飲んでいる</label></li>
+  </ul>
+
+  <h3><svg class="ic"><use href="#ic-rice"/></svg>食べ物</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">買い物のとき、裏の原材料表示を見るくせがある</label></li>
+    <li><label><input type="checkbox">原材料に、読めないカタカナが並ぶものは少なめにしている</label></li>
+    <li><label><input type="checkbox">毎日の食事に、豆腐・納豆・味噌などの大豆食品が入っている</label></li>
+    <li><label><input type="checkbox">野菜や海藻を、1日1回は食べている</label></li>
+  </ul>
+
+  <h3><svg class="ic"><use href="#ic-clock"/></svg>食べ方・暮らし</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">お腹がすいてから食べている<span class="note">（時間がきたから、なんとなく、ではなく）</span></label></li>
+    <li><label><input type="checkbox">夜遅くに食べるのは、週に1〜2回までにしている</label></li>
+    <li><label><input type="checkbox">胃腸を休める日を、意識してつくったことがある</label></li>
+  </ul>
+
+  <p class="count">☑の数　<b id="checkCount">0</b> / 11</p>
+
+  <h3><svg class="ic"><use href="#ic-heart"/></svg>☑の数でわかる、今のあなた</h3>
+  <div class="diag">
+    <div class="tier" data-min="9" data-max="11">
+      <div class="tag">9〜11個</div>
+      <div><b>選べている人</b>ふだんから、口にするものを自分で選べています。次は「足す」より「休ませる」をプラスすると、身体の変化をもっと感じられます。</div>
+    </div>
+    <div class="tier" data-min="5" data-max="8">
+      <div class="tag">5〜8個</div>
+      <div><b>あと一歩の人</b>気をつけていることは、たくさんあります。☑がつかなかった項目を、ひとつだけ選んで今週やってみましょう。</div>
+    </div>
+    <div class="tier" data-min="0" data-max="4">
+      <div class="tag">0〜4個</div>
+      <div><b>これから伸びる人</b>伸びしろがいちばん大きいのが、あなたです。まずは1日だけ、胃腸を休める日をつくってみてください。身体からのサインに気づけるようになります。</div>
+    </div>
+  </div>
+  <a class="btn line screen-only" id="sendResult" href="https://line.me/R/oaMessage/@689jvflb/">結果をLINEで送る</a>
+  <p class="center small screen-only">送ってくださった方には、ひとりずつお返事します。</p>
+
+  <div class="box">
+    <p>「胃腸を休める日」に☑がつかなかった方へ。<br>次のページで、いちばん手軽な方法をご紹介します。</p>
+  </div>
+</section>
+
+<!-- 3ページ目：なぜ入れない日 -->
+<section class="sheet">
+  <span class="pageno">3 / 8</span>
+  <svg class="corner"><use href="#ic-rest"/></svg>
+  <p class="kicker">足すより、まず休ませる</p>
+  <h2>なぜ「入れない日」をつくるの？<br><span class="em">1日ファスティングをおすすめする理由</span></h2>
+  <p>「身体にいいものを足す」ことは、多くの人がやっています。<br>でも、毎日休まず働いている胃腸を「休ませる」ことは、意外とやっていません。</p>
+  <div class="compare">
+    <div class="add"><b>足す</b>サプリ・健康食品<br>「身体にいいもの」を<br>プラスする</div>
+    <div class="rest"><b>休ませる</b>1日だけ<br>「入れない日」をつくって<br>胃腸を休める</div>
+  </div>
+  <p class="small center" style="margin-bottom:14px">多くの人がやっているのは左。右は、意外とやっていません。</p>
+  <p>身体は食べたものでつくられます。だからこそ、ときどき「入れない日」をつくって、自分の身体と向き合う時間を持ってほしいのです。</p>
+
+  <h3>1日ファスティングで、気づけること</h3>
+  <div class="reasons">
+    <div class="reason"><svg class="pic"><use href="#ic-rest"/></svg><span class="num">1</span><b>胃腸が休まる</b>
+      <p>朝起きたときの身体の重さや、お腹の張りのちがいに気づく方が多いです。</p></div>
+    <div class="reason"><svg class="pic"><use href="#ic-soup"/></svg><span class="num">2</span><b>味覚がリセットされる</b>
+      <p>次の日のお味噌汁やごはんが、びっくりするほどおいしく感じられます。濃い味や甘いものへの欲が落ち着くきっかけになります。</p></div>
+    <div class="reason"><svg class="pic"><use href="#ic-clock"/></svg><span class="num">3</span><b>「ニセモノの空腹」に気づく</b>
+      <p>お腹がすいたと思っても、実は「時間だから」「口さみしいから」だった。そんな自分の食べぐせが見えてきます。</p></div>
+    <div class="reason"><svg class="pic"><use href="#ic-heart"/></svg><span class="num">4</span><b>「自分で選べる」自信がつく</b>
+      <p>1日食べなくても大丈夫だった。その経験が、何をどれだけ食べるかを自分で決める力になります。</p></div>
+  </div>
+
+  <p class="center" style="margin:18px 0 0"><b>1日ファスティングの流れ</b></p>
+  <div class="flow">
+    <div class="step"><svg class="ic-md"><use href="#ic-rice"/></svg><b>前日</b>減食で<br>準備する</div>
+    <div class="arrow">▶</div>
+    <div class="step main"><svg class="ic-md"><use href="#ic-tea"/></svg><b>当日</b>水分をとって<br>胃腸を休める</div>
+    <div class="arrow">▶</div>
+    <div class="step"><svg class="ic-md"><use href="#ic-soup"/></svg><b>翌日</b>回復食で<br>やさしく戻す</div>
+  </div>
+  <p class="center small">いきなり何日もやる必要はありません。まずは1日だけ。<br>次のページから、ひとつずつご紹介します。</p>
+</section>
+
+<!-- 4ページ目：前日 -->
+<section class="sheet">
+  <span class="pageno">4 / 8</span>
+  <svg class="corner"><use href="#ic-rice"/></svg>
+  <p class="kicker">身体を休ませて、明日の自分をラクにしよう</p>
+  <h2>1日ファスティング<br><span class="em">前日の準備</span></h2>
+  <p class="lead">身体を休ませるために、前日は「軽め」を意識しましょう。<br>無理なく整えることが、ファスティング成功の第一歩です。</p>
+
+  <h3>前日に意識すること</h3>
+  <div class="points">
+    <div class="point"><span class="num">1</span><div><b>量を減らす（減食）</b><span>いつもより量を控えめに。朝は液体のものにして、胃腸をならしていきましょう。</span></div><svg class="pic"><use href="#ic-rice"/></svg></div>
+    <div class="point"><span class="num">2</span><div><b>水をしっかり飲む</b><span>1.5Lを目安に、こまめに水分をとりましょう。</span></div><svg class="pic"><use href="#ic-water"/></svg></div>
+    <div class="point"><span class="num">3</span><div><b>植物性たんぱく質を意識してとる</b><span>朝と夜はソイプロテインを。ほかに豆腐・豆乳・納豆など。</span></div><svg class="pic"><use href="#ic-tofu"/></svg></div>
+  </div>
+
+  <h3>食事の例</h3>
+  <div class="meals">
+    <div class="meal"><svg class="ic-md"><use href="#ic-sunrise"/></svg><span class="when">朝（液体）</span>ソイプロテイン<br>具なし味噌汁</div>
+    <div class="meal"><svg class="ic-md"><use href="#ic-sun"/></svg><span class="when">昼</span>野菜スープ<br>小さめのおにぎり</div>
+    <div class="meal"><svg class="ic-md"><use href="#ic-moon"/></svg><span class="when">夜</span>ソイプロテイン<br>温野菜・豆腐・味噌汁</div>
+  </div>
+
+  <div class="note-box"><b>酵素ドリンクが手に入る方へ</b><br>準備の日・当日・回復の日に取り入れるのもおすすめです。なくても大丈夫です。</div>
+
+  <h3>控えたいもの</h3>
+  <div class="avoid"><span>アルコール</span><span>カフェイン（コーヒー・紅茶など）</span><span>揚げ物・食べすぎ</span></div>
+
+  <div class="box">
+    <p class="center"><b>完璧にやろうとしなくて大丈夫！</b><br>「身体を休ませる意識」を持つことが、ファスティング成功の第一歩です。</p>
+  </div>
+</section>
+
+<!-- 5ページ目：当日 -->
+<section class="sheet">
+  <span class="pageno">5 / 8</span>
+  <svg class="corner"><use href="#ic-tea"/></svg>
+  <p class="kicker">無理なく、自分をいたわる1日にしよう</p>
+  <h2>1日ファスティング<br><span class="em">当日の過ごし方</span></h2>
+  <p class="lead">水分をしっかりとりながら、リラックスして過ごすことがポイントです。<br>がんばりすぎず、自分のペースでOK！</p>
+
+  <div class="timeline">
+    <div class="tl"><svg class="pic"><use href="#ic-sunrise"/></svg><span class="time">起きたら　6:00〜</span><b>身体を目覚めさせる</b>
+      <ul><li>白湯をコップ1杯飲む</li><li>軽いストレッチや深呼吸</li></ul>
+      <span class="tip">1日の始まりは「温める」「ゆるめる」がカギです。</span></div>
+    <div class="tl"><svg class="pic"><use href="#ic-tea"/></svg><span class="time">朝　7:00〜12:00</span><b>水分補給をしっかりと</b>
+      <ul><li>デトックスウォーターやハーブティー</li><li>お腹がすいたら、白湯やお出汁、具なしスープを</li></ul>
+      <span class="tip">空腹は自然なサイン。無理せず、温かい飲み物で満たしてあげましょう。</span></div>
+    <div class="tl"><svg class="pic"><use href="#ic-leaf"/></svg><span class="time">昼　12:00〜18:00</span><b>ゆるく過ごして、身体を動かす</b>
+      <ul><li>野菜スムージーや甘酒を少しとってもOK</li><li>散歩やヨガなど、軽い運動で血のめぐりをよくする</li><li>水は1〜2時間おきにコップ1杯</li></ul></div>
+    <div class="tl"><svg class="pic"><use href="#ic-soup"/></svg><span class="time">夕方　18:00〜22:00</span><b>リラックスタイム</b>
+      <ul><li>具なしの野菜スープや味噌汁を少し</li><li>生姜を入れると身体が温まります</li><li>アロマバスや瞑想で心を落ち着ける</li></ul></div>
+    <div class="tl"><svg class="pic"><use href="#ic-moon"/></svg><span class="time">寝る前　22:00〜</span><b>しっかり休んで回復をうながす</b>
+      <ul><li>温かいハーブティーを飲む</li><li>ストレッチや深呼吸でリラックス</li><li>早めに寝て、身体を休める</li></ul>
+      <span class="tip">眠っているあいだに、身体のリセットが進みます。</span></div>
+  </div>
+
+  <div class="box">
+    <p class="center"><b>完璧を目指さなくて大丈夫！</b><br>つらくなったら、温かい飲み物を飲んで、無理せず調整してくださいね。</p>
+  </div>
+</section>
+
+<!-- 6ページ目：翌日 -->
+<section class="sheet">
+  <span class="pageno">6 / 8</span>
+  <svg class="corner"><use href="#ic-soup"/></svg>
+  <p class="kicker">リセットした身体を、やさしく起こしましょう</p>
+  <h2>1日ファスティング<br><span class="em">翌日の回復食と注意点</span></h2>
+  <p class="lead">いきなり重い食事をとると、胃腸に負担がかかります。<br>やさしい回復食で、内側から整えていきましょう。</p>
+
+  <h3>回復食のポイント</h3>
+  <div class="points">
+    <div class="point"><span class="num">1</span><div><b>量を減らす（減食）</b><span>朝は液体のものから。いきなり元の量に戻さず、少しずつ。</span></div></div>
+    <div class="point"><span class="num">2</span><div><b>よく噛んで、ゆっくり食べる</b></div></div>
+    <div class="point"><span class="num">3</span><div><b>朝と夜はソイプロテインを</b><span>胃腸にやさしく、たんぱく質をとれます。</span></div></div>
+  </div>
+
+  <h3>回復食の例</h3>
+  <div class="meals">
+    <div class="meal"><svg class="ic-md"><use href="#ic-sunrise"/></svg><span class="when">朝（液体）</span>ソイプロテイン<br>具なし味噌汁や重湯</div>
+    <div class="meal"><svg class="ic-md"><use href="#ic-sun"/></svg><span class="when">昼</span>お粥<br>具の少ない野菜スープ</div>
+    <div class="meal"><svg class="ic-md"><use href="#ic-moon"/></svg><span class="when">夜</span>ソイプロテイン<br>豆腐や野菜の味噌汁<br>少なめのごはん</div>
+  </div>
+
+  <h3>注意すること</h3>
+  <div class="cautions">
+    <div class="caution"><b>体調が悪くなったら</b>無理せずファスティングをやめて、医師に相談しましょう。</div>
+    <div class="caution"><b>妊娠中・授乳中・持病のある方</b>ファスティングを行う前に、必ず医師に相談してください。</div>
+    <div class="caution"><b>空腹感が強いとき</b>無理せず、温かいスープやお粥など軽い食事をとり、体調を一番に考えましょう。</div>
+    <div class="caution"><b>水分補給は忘れずに</b>引き続き、こまめに水や白湯、ハーブティーをとりましょう。</div>
+  </div>
+</section>
+
+<!-- 7ページ目：記録表 -->
+<section class="sheet" id="record">
+  <span class="pageno">7 / 8</span>
+  <svg class="corner"><use href="#ic-note"/></svg>
+  <p class="kicker">やってみたら、どう変わった？</p>
+  <h2>やる前・やった後<br><span class="em">チェック表</span></h2>
+  <p class="lead">自分の変化を書いてみましょう。<br>変わったことが目に見えると、続けたくなります。</p>
+  <p class="center small screen-only">スマホのこのページに、そのまま書き込めます（印刷は不要です）。</p>
+
+  <table class="record">
+    <thead><tr><th></th><th>やる前の日</th><th>やった次の日</th></tr></thead>
+    <tbody>
+      <tr><td>体重（kg）</td><td><input data-k="w1" inputmode="decimal"></td><td><input data-k="w2" inputmode="decimal"></td></tr>
+      <tr><td>朝起きたときの身体の軽さ</td><td><input data-k="a1" inputmode="numeric"></td><td><input data-k="a2" inputmode="numeric"></td></tr>
+      <tr><td>顔や脚のむくみ</td><td><input data-k="b1" inputmode="numeric"></td><td><input data-k="b2" inputmode="numeric"></td></tr>
+      <tr><td>お腹の調子</td><td><input data-k="c1" inputmode="numeric"></td><td><input data-k="c2" inputmode="numeric"></td></tr>
+      <tr><td>肌の調子</td><td><input data-k="d1" inputmode="numeric"></td><td><input data-k="d2" inputmode="numeric"></td></tr>
+      <tr><td>気分</td><td><input data-k="e1" inputmode="numeric"></td><td><input data-k="e2" inputmode="numeric"></td></tr>
+      <tr><td>よく眠れた？</td><td><input data-k="f1" inputmode="numeric"></td><td><input data-k="f2" inputmode="numeric"></td></tr>
+    </tbody>
+  </table>
+  <p class="scale">体重のほかは 1〜5 で書いてください（5がいちばん良い）</p>
+
+  <h3>気づいたこと・感じたこと</h3>
+  <textarea data-k="memo" placeholder="味噌汁がおいしかった、朝すっきり起きられた、など"></textarea>
+  <p class="saved">書いた内容は、このスマホの中にだけ残ります（ほかの人には見えません）</p>
+
+  <div class="box">
+    <p class="center">書いたら、ぜひLINEで感想を送ってください。<br>ひとりずつお返事します。</p>
+  </div>
+  <a class="btn line" href="https://line.me/R/oaMessage/@689jvflb/">LINEで感想を送る</a>
+</section>
+
+<!-- 8ページ目：次の一歩 -->
+<section class="sheet">
+  <span class="pageno">8 / 8</span>
+  <svg class="corner"><use href="#ic-heart"/></svg>
+  <p class="kicker">ひとりでやるのは、ちょっと怖い</p>
+  <h2>そんなあなたへ<br><span class="em">一緒にやりませんか？</span></h2>
+  <p class="worry">このガイドを読んでも、<q>ひとりでできる自信がない</q><q>食べないのは、やっぱり怖い</q>そう感じた方もいると思います。<br>それで大丈夫です。</p>
+
+  <div class="program">
+    <svg class="ic-lg"><use href="#ic-people"/></svg>
+    <div class="title"><b>みんなでやれば怖くない<br>1日ファスティング</b></div>
+    <p class="center" style="margin-top:12px">くわしくは、LINE公式でお問い合わせください。</p>
+    <p class="center">LINEで <span class="keyword">ファスティング</span> と送ってください</p>
+    <a class="btn line" href="https://line.me/R/oaMessage/@689jvflb/?%E3%83%95%E3%82%A1%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">LINEで「ファスティング」と送る</a>
+  </div>
+
+  <h3><svg class="ic"><use href="#ic-chat"/></svg>自分の身体のこと、相談してみたい方へ</h3>
+  <p>無料の個別相談（30分・Zoom）を受け付けています。<br>LINEで <span class="keyword">相談</span> と送ってください。</p>
+
+  <div class="words">
+    <p>身体は食べたものでつくられる。</p>
+    <p>心は聞いた言葉でつくられる。</p>
+    <p>未来は話した言葉でつくられる。</p>
+  </div>
+  <p class="center">このガイドが、あなたの心と身体を<br>大切にするきっかけになりますように。</p>
+  <div class="author">
+    <img src="profile.jpg" alt="やすむらひろみ">
+    <div class="name"><b>やすむらひろみ</b><br><span>体質改善コーチ・ファスティング講師</span></div>
+  </div>
+  <svg class="sprig flip" style="margin-top:14px"><use href="#ic-sprig"/></svg>
+</section>
+
+</main>
+
+<div class="tools">
+  <button type="button" onclick="window.print()">このガイドを印刷する</button>
+</div>
+<footer>© やすむらひろみ</footer>
+
+<script>
+  // チェックの数を数える
+  var boxes = document.querySelectorAll("#check input[type=checkbox]");
+  var countEl = document.getElementById("checkCount");
+  var tiers = document.querySelectorAll(".tier");
+  var sendBtn = document.getElementById("sendResult");
+  function updateCount() {
+    var n = 0;
+    boxes.forEach(function (b) { if (b.checked) n++; });
+    countEl.textContent = n;
+    var any = false;
+    boxes.forEach(function (b) { if (b.checked) any = true; });
+    tiers.forEach(function (t) {
+      var on = any && n >= +t.dataset.min && n <= +t.dataset.max;
+      t.classList.toggle("active", on);
+    });
+    sendBtn.href = "https://line.me/R/oaMessage/@689jvflb/?" + encodeURIComponent("チェックリストの結果は " + n + "個でした");
+  }
+
+  // チェックと記録を、このスマホの中だけに保存する
+  var KEY = "mitooshi-guide-2026";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+  }
+  boxes.forEach(function (b, i) {
+    b.checked = !!saved["c" + i];
+    b.addEventListener("change", function () { saved["c" + i] = b.checked; save(); updateCount(); });
+  });
+  document.querySelectorAll("#record [data-k]").forEach(function (el) {
+    var k = el.getAttribute("data-k");
+    if (saved[k]) el.value = saved[k];
+    el.addEventListener("input", function () { saved[k] = el.value; save(); });
+  });
+  updateCount();
+</script>
+</body>
+</html>
